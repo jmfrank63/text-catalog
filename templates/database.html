@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+<head>
+    {% block title %}
+        Welcome
+    {% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div class="header">
+        <h1>Content of the database</h1>
+    </div>
+    <div class="main">
+        <div class="languages">
+            <h2>Languages</h2>
+            <ul class="lang_list">
+            {% for language in languages %}
+                <li id="lang_entry">{{ language.name }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="users">
+            <h2>Users</h2>
+            <ul class="user_list">
+            {% for user in users %}
+                <li id="user_entry">{{ user.username }} {{ user.email }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="sentences">
+            <h2>Sentences</h2>
+            <ul class="sent_list">
+            {% for sentence in sentences %}
+                <li id="sent_entry">{{ sentence.text }} <br>
+                                    {{ sentence.translation }} <br> 
+                                    {{ sentence.language.name }} <br> 
+                                    {{ sentence.user.username }} {{ sentence.user.email }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endblock %}
+</body>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - Text-Catalog</title>
+    <link rel="shortcut icon"
+    href="{{ url_for('static', filename='img/favicon.ico') }}">
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <h1>Something is here!</h1>
+    {% endblock %}
+</body>
+</html>
